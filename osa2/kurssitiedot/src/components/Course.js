@@ -1,5 +1,5 @@
 import React from 'react'
-import { Total, Parts, Header } from './'
+import { Total, Parts, Header } from '.'
 
 const Course = ({ course }) => {
     const name = course.name
