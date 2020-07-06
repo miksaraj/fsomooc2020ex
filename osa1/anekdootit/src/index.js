@@ -24,6 +24,10 @@ const App = (props) => {
     return Math.floor(Math.random() * 6)
   }
 
+  const topAnecdote = () => {
+    return Object.keys(votes).find(key => votes[key] === Math.max(...Object.values(votes)))
+  }
+
   const iterateVotes = () => {
     let count = parseInt(votes[selected]) + 1
     let voteObj = {...votes}
@@ -39,6 +43,8 @@ const App = (props) => {
       <Button handleClick={() => setSelected(randomInt())} text="Next anecdote" />
       <Button handleClick={() => setVotes(iterateVotes())} text="Vote" />
       <Header header="Anecdote with most votes" />
+      <p>{props.anecdotes[topAnecdote()]}</p>
+      <p>Has {votes[topAnecdote()]} votes</p>
     </div>
   )
 }
