@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
+const Header = ({ header }) => (
+  <h1>{header}</h1>
+)
+
 const Button = ({ handleClick, text }) => (
   <button onClick={handleClick}>{text}</button>
 )
@@ -29,10 +33,12 @@ const App = (props) => {
 
   return (
     <div>
+      <Header header="Anecdote of the day" />
       <p>{props.anecdotes[selected]}</p>
       <p>Has {votes[selected]} votes</p>
       <Button handleClick={() => setSelected(randomInt())} text="Next anecdote" />
       <Button handleClick={() => setVotes(iterateVotes())} text="Vote" />
+      <Header header="Anecdote with most votes" />
     </div>
   )
 }
