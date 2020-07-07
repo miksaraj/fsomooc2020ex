@@ -1,7 +1,9 @@
 import React from 'react'
 
-const Person = ({ person }) => (
-    <li>{person.name} {person.number}</li>
+const Person = ({ person, confirmDelete }) => (
+    <li>
+        {person.name} {person.number} <button value={person.id} onClick={confirmDelete}>Delete</button>
+    </li>
 )
 
 export default Person
