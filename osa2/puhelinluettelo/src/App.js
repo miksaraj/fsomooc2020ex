@@ -110,7 +110,7 @@ const App = () => {
 	}
 
 	const confirmDelete = (event) => {
-		const id = parseInt(event.target.value)
+		const id = event.target.value
 		const name = persons.find(p => p.id === id).name
 		if (window.confirm(`Delete ${name}?`)) {
 			deletePerson(id, name)
